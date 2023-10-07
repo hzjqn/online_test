@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="online_test"
+run/main_scene="res://Scenes/main.tscn"
+config/features=PackedStringArray("4.1", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://GameManager.cs"
+MultiplayerConnectionManager="*res://MultiplayerConnectionManager.cs"
+ProfileManager="*res://ProfileManager.cs"
+
+[display]
+
+window/size/viewport_width=990
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
+
+[dotnet]
+
+project/assembly_name="online_test"
+
+[editor]
+
+naming/scene_name_casing=1
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0392157, 0.0352941, 0.0509804, 1)

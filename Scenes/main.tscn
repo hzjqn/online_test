@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6owteereqg2d"]
+
+[ext_resource type="Script" path="res://Scenes/MainScene.cs" id="1_rou43"]
+[ext_resource type="PackedScene" uid="uid://gru1etpbis5j" path="res://Menus/CreateJoinServerMenu.tscn" id="2_latxr"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_rou43")
+
+[node name="PlayerObjectSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://Objects/PlayerObject/PlayerObject.tscn")
+spawn_path = NodePath("../GameSpace")
+
+[node name="GameSpace" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="MenuCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CreateJoinServerMenu" parent="MenuCanvasLayer/MarginContainer" instance=ExtResource("2_latxr")]
+layout_mode = 2
